@@ -1,0 +1,21 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Progress Component" >
+        <c-progress-bar currentstep={currentStep} stepvalues={stepvalues}></c-progress-bar>
+   
+   
+   
+      <template if:true={showAccount}>
+    <c-account-component onnext={handleNext}></c-account-component>
+    </template>
+    
+    <template if:true={showContact}>
+    <c-contact-component onnext={handleNext} onpre={handlePre}></c-contact-component>
+    </template>
+    <template if:true={showOpportunity}>
+        <c-opportunity-component onnext={handleNext} onpre={handlePre}></c-opportunity-component>
+        </template>
+
+    </lightning-card>
+    
+    
+</template>

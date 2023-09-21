@@ -1,0 +1,18 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="12" >
+            <lightning-card  variant="Narrow"  title="Accounts">
+                <div class="slds-m-around_medium">
+                    <template if:true={displayRecords} for:each={displayRecords} for:item="rec">
+                        <c-child-component key={rec.Id} record ={rec} data-value={rec.Id} iconname ="standard:account"  onclick={handleClick}></c-child-component>
+                    </template>
+                    <template if:true={showButton}>
+                        <lightning-button variant="brand" label="More"  onclick={handleButtonClick}></lightning-button>
+                    </template>
+                   
+                </div>
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+    
+</template>

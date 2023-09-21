@@ -1,0 +1,40 @@
+<template>
+    <template if:true={showError}>
+        <lightning-card  variant="Narrow">
+            <b>Contact must be qualified before assigning to Account or Opportunity</b>
+        </lightning-card>
+    </template>
+    <template if:false={showError}>
+        <lightning-card  variant="Narrow"  title="Assessment" >
+            <div class="slds-m-around_medium">
+           <!-- <lightning-dual-listbox 
+                name="Qualification Details"
+                label="Qualification Details"
+                source-label="Available"
+                selected-label="Selected"
+                field-level-help="This is a dual listbox"
+                options={picVal}
+                value ={picVal}
+                onchange={handleChange}> 
+            </lightning-dual-listbox> -->
+            <lightning-record-edit-form id="recordViewForm"
+                        record-id={recordId}
+                        object-api-name="Contact"
+                        onsubmit ={handleSubmit}>
+                
+                <lightning-input-field field-name="Qualification_Details__c"></lightning-input-field>
+                <lightning-input-field field-name="AccountId" onchange={handleChange}></lightning-input-field>
+                <template if:true={accId}>
+                    <c-assessment-lookup-final field-name="Name" object-api-name="Opportunity" 
+                iconname="standard:opportunity" acc-id={accId} onoppid={handleOppId}></c-assessment-lookup-final>
+                </template>
+                <lightning-button type="submit" label="Update record" ></lightning-button>
+    
+            </lightning-record-edit-form>
+    
+        </div>
+        </lightning-card>
+
+    </template>
+
+</template>

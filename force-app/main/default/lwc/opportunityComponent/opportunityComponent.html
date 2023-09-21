@@ -1,0 +1,17 @@
+<template>
+    <lightning-card  variant="Narrow">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Opp Name" name="oppName" onchange={handleChange}></lightning-input>
+            <lightning-input label="CloseDate" name = "closeDate" onchange={handleChange} type="Date"></lightning-input>
+            <lightning-combobox
+                name="oppStage"
+                label="Stage"
+                value={value}
+                placeholder="Select Progress"
+                options={picVal}
+                onchange={handleChange} ></lightning-combobox>
+        </div>
+            <lightning-button variant="Standard" label="Previous" name="pre" onclick={handleClick}></lightning-button>
+        <lightning-button variant="Standard" label="Save" name="Save" onclick={handleClick}></lightning-button>
+    </lightning-card>
+</template>

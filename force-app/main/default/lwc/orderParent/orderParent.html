@@ -1,0 +1,35 @@
+<!--<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="12" >
+            <lightning-card  variant="Narrow"  title="Orders">
+                
+                    <div class="slds-grid slds-wrap" >
+                        <template if:true={records} for:each={records} for:item="rec">
+                            <div key={rec.Id} class="slds-m-around_medium">
+                                 <c-order-child record ={rec} iconname ="standard:orders"></c-order-child>
+                            </div>
+                        </template>
+                    </div>   
+                
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+    
+</template>-->
+
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" padding="around-small" small-device-size="3" medium-device-size="6" large-device-size="12" >
+            <lightning-card  variant="Narrow"  title="Orders">
+                <div class="slds-m-around_medium">
+                    <template if:true={records} for:each={records} for:item="rec">
+                        <div key={rec.Id} class="slds-m-around_medium">
+                        <c-order-child record ={rec} iconname ="standard:orders"></c-order-child>
+                        </div>
+                    </template>
+                </div>
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+    
+</template>

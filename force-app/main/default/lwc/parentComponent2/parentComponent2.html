@@ -1,0 +1,19 @@
+<template>
+    <lightning-layout multiple-rows>
+        <lightning-layout-item size="12" padding="around-small" small-device-size="4" medium-device-size="6" large-device-size="12" >
+            <lightning-card  variant="Narrow"  title={Count}>
+                <div class="slds-grid slds-wrap" >
+                    
+                        <template if:true={records} for:each={records} for:item="rec">
+                            <div key={rec.Id} class="slds-m-around_medium" id={rec.Id}  onclick={handleClick}>
+                            <c-child-component2 record ={rec} onchilddel={handleDelete} iconname ="standard:account"></c-child-component2>
+                        </div>
+                        </template>
+                    
+                </div>
+                
+            </lightning-card>
+        </lightning-layout-item>
+    </lightning-layout>
+    
+</template>

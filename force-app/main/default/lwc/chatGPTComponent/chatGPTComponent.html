@@ -1,0 +1,24 @@
+<template>
+    <form>
+    <lightning-card  variant="Narrow"  title="ChatGPT" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <pre> <p><b>{records}</b></p> </pre>
+        </div>
+        <div class="slds-m-around_large">
+             <div if:true={showSpinner} class="slds-is-relative">
+                <lightning-spinner
+                    alternative-text="Loading..." variant="brand">
+                </lightning-spinner>
+            </div>
+        </div>
+        
+        <div class="slds-m-around_medium">
+            <lightning-input type="text" variant="standard" name="name" label="Ask the Qustion" onchange={handleChange} placeholder="type here..."></lightning-input>
+            <br>
+            <lightning-button variant="success" label="Send"  onclick={handleClick}></lightning-button>
+        </div>
+
+        
+    </lightning-card>
+</form>
+</template>

@@ -1,0 +1,15 @@
+<template>
+    <lightning-card  variant="Narrow"  title="Progress" icon-name="standard:account">
+        <div class="slds-m-around_medium">
+            <lightning-progress-indicator current-step={currentstep} type="path" has-error="true" variant="base">
+                <template for:each={stepvalues} for:item="each">
+                    <lightning-progress-step key={each.value} label={each.value} value={each.value}></lightning-progress-step>
+                </template>
+                
+            </lightning-progress-indicator>
+           
+        </div>
+        
+    </lightning-card>
+    
+</template>
